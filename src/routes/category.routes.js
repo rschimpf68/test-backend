@@ -1,7 +1,16 @@
 import { Router } from "express";
 
-import { createCategory, getAllCategoryIncome, getAllCategoryExpense, deleteCategory, updateCategory, getCategoryById, getAllCategories } from "../controllers/categories.controller.js";
-
+import {
+  createCategory,
+  getAllCategoryIncome,
+  getAllCategoryExpense,
+  deleteCategory,
+  updateCategory,
+  getCategoryById,
+  getAllCategories,
+  getTopExpenseCategories,
+  getTopIncomeCategories,
+} from "../controllers/categories.controller.js";
 
 const router = Router();
 
@@ -12,7 +21,7 @@ router.get("/category/delete", deleteCategory);
 router.post("/category/update", updateCategory);
 router.get("/category/byId", getCategoryById);
 router.get("/category/getAll", getAllCategories);
-
-
+router.get("/category/getTop5ExpenseCategories", getTopExpenseCategories);
+router.get("/category/getTop5IncomeCategories", getTopIncomeCategories);
 
 export default router;

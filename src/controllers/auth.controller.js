@@ -83,7 +83,7 @@ export const login = async (req, res) => {
 
         });
 
-
+        console.log(token);
         res.cookie('token', token, {
             httpOnly: false,
             secure: false,
